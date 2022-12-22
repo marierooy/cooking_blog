@@ -12,16 +12,20 @@
                 <td>{{ recette.id }}</td>
             </tr>
             <tr>
+                <th>Nom</th>
+                <td>{{ recette.name }}</td>
+            </tr>
+            <tr>
                 <th>Ingredients</th>
-                <td>{{ recette.ingredients }}</td>
+                <td>{{ recette.ingredients | raw }}</td>
             </tr>
             <tr>
                 <th>Etapes</th>
-                <td>{{ recette.etapes }}</td>
+                <td>{{ recette.etapes | raw }}</td>
             </tr>
             <tr>
                 <th>Description</th>
-                <td>{{ recette.description }}</td>
+                <td>{{ recette.description | raw }}</td>
             </tr>
             <tr>
                 <th>Auteur</th>

@@ -5,24 +5,26 @@
 {% block body %}
     <h1>Recette index</h1>
 
-    <table class="table">
+    <table class="table table-striped">
         <thead>
             <tr>
-                <th>Id</th>
-                <th>Ingredients</th>
-                <th>Etapes</th>
-                <th>Description</th>
-                <th>actions</th>
+                <th class="text-left">Id</th>
+                <th class="text-left">Nom</th>
+                <th class="text-left">Ingredients</th>
+                <th class="text-left">Etapes</th>
+                <th class="text-left">Description</th>
+                <th class="text-left">actions</th>
             </tr>
         </thead>
         <tbody>
         {% for recette in recettes %}
             <tr>
-                <td>{{ recette.id }}</td>
-                <td>{{ recette.ingredients }}</td>
-                <td>{{ recette.etapes }}</td>
-                <td>{{ recette.description }}</td>
-                <td>
+                <td class="text-left">{{ recette.id }}</td>
+                <td class="text-left">{{ recette.name }}</td>
+                <td class="text-left">{{ recette.ingredients | raw }}</td>
+                <td class="text-left">{{ recette.etapes | raw }}</td>
+                <td class="text-left">{{ recette.description | raw }}</td>
+                <td class="text-left">
                     <a href="{{ path('app_recette_show', {'id': recette.id}) }}">show</a>
                     <a href="{{ path('app_recette_edit', {'id': recette.id}) }}">edit</a>
                 </td>
@@ -35,5 +37,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('app_recette_new') }}">Create new</a>
+    <a href="{{ path('app_recette_new') }}"><button class="button">Create new</button></a>
 {% endblock %}

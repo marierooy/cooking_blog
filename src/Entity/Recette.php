@@ -16,10 +16,10 @@ class Recette
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(type: Types::TEXT)]
     private ?string $ingredients = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(type: Types::TEXT)]
     private ?string $etapes = null;
 
     #[ORM\Column(type: Types::TEXT)]

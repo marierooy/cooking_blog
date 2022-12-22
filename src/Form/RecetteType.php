@@ -4,8 +4,10 @@ namespace App\Form;
 
 use App\Entity\Recette;
 use Symfony\Component\Form\AbstractType;
+use FOS\CKEditorBundle\Form\Type\CKEditorType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 
 class RecetteType extends AbstractType
 {
@@ -13,9 +15,9 @@ class RecetteType extends AbstractType
     {
         $builder
             ->add('name')
-            ->add('ingredients')
-            ->add('etapes')
-            ->add('description')
+            ->add('ingredients', CKEditorType::class)
+            ->add('etapes', CKEditorType::class)
+            ->add('description', CKEditorType::class)
         ;
     }
 
